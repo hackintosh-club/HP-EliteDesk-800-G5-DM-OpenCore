@@ -1,57 +1,76 @@
-## HP EliteDesk 800 G5 DM Hackintosh OpenCore EFI
+## 惠普 EliteDesk 800 G5 DM 黑苹果 OpenCore EFI
 
 ![image](ScreenShot/HP800G4DM.png)
 
-### [简体中文](README.zh_CN.md)
+### [ENGLISH](README.EN.md)
 
 ### OpenCore
 
 [OpenCore 0.9.5](https://github.com/acidanthera/OpenCorePkg)
 
-### OS Version Tested
+### macOS
 
 - macOS Monterey 12.x
-- macOS Ventura  13.x 
+- macOS Ventura   13.x 
 - macOS Sonoma  14.x 
 
-### Hardware
+### 硬件
 
-- Motherboard: Q370
-- CPU: Intel 9th i9-9900T ES
-- RAM: GLOWAY 16G*2 DDR4 2666 MHz
-- SSD: Fanxiang S500PRO 2TB MacOS Ventura
-- iGPU: Intel UHD Graphic 630
-- Audio: Conexant Cx20632
-- Ethernet Card:  Intel L219-LM
-- WiFi: Intel AX200
-- PSU: PA-1900-08H2 90W 19V 4.74A
+- 芯片组: Q370
+- 处理器: 英特尔9代 i9-9900T ES
+- 内存: 光威 16GB*2 DDR4 2666 MHz
+- 硬   盘: 梵想 S500PRO 2TB MacOS Ventura
+- 核   显: 英特尔超核心显卡630
+- 声卡: 科胜讯 Cx20632
+- 有线网卡: 英特尔 L219-LM
+- 无线网卡: 英特尔 AX200
+- 电   源: PA-1900-08H2 90W 19V 4.74A
 
-### Notes
-
- - Use [OpenCore Configurator](https://mackie100projects.altervista.org/opencore-configurator/) or [OCAuxiliaryTools](https://github.com/ic005k/OCAuxiliaryTools) build your SMBIOS
- - The AirportItlwm.kext driver in this EFI is only compatible with the MacOS 13 Ventura version
- - To install macOS 14 Sonoma, Please replace the AirportItlwm.kext driver that is suitable for version 14 on your own
-
-### Bios Setup
+### BIOS设置
 
 ```
-Security > BIOS SureStart > Unchecked ALL
-Security > SIntel Software Guard Extensions (SGX) Disable
-Secure Boot Configuration > Configure Legacy Support and Secure Boot Legacy Support Disable and Secure Boot Disable
-System Options > Configure Storage Controller for RAID Unchecked
-System Options > VTd Unchecked
-Built-In Device Options > Video memory size 64 MB
-Built-In Device Options > Wake on Lan Disable
+安全
+  |-- BIOS Sure Start
+     |-- 每一次引导均验证引导块：关闭
+  |-- Intel 软件防护扩展指含（SGX）：禁用
+  
+先进  
+  |-- 启动选项
+     |-- 快速引导：关闭
+	   |-- 网络（PXE）引导：关闭
+	|-- 安全引导配置
+     |-- 配置传统支持和安全引导：禁用传统支持和禁用安全引导
+	|-- 系统选项
+	   |-- 配置 RAID 存储控制器：关闭
+	   |-- 定向I/O虚拟化技术（VTd）：关闭
+	|-- 内置设备选项
+     |-- 通过 LAN 唤醒：禁用
+     |-- 显存大小:64 MB
+  |-- 电源管理选项
+     |--S5 最大节能：关闭
+     |--从键盘端口启动：关闭
+     |--唯一睡眠状态闪烁速率：关闭
+
 ```
 
-### Contact Us
+### 注意事项
 
-QQ Group: 23304408
+ - 安装成功后必须使用 [OpenCore Configurator](https://mackie100projects.altervista.org/opencore-configurator/) 或者 [OCAuxiliaryTools](https://github.com/ic005k/OCAuxiliaryTools) 生成你自己的 SMBIOS
+ - 此EFI中的AirportItlwm.kext驱动仅适配MacOS 13 Ventura版本
+ - 安装macOS 14 Sonoma请自行替换适合14版本的AirportItlwm.kext驱动
+
+
+### 联系我们
+
+QQ群: 23304408
 
 ![image](ScreenShot/QRCode.png)
 
+### 鲁大师硬件截图
 
-### Tools
+![image](ScreenShot/masterLu.png)
+
+### 常用工具
 
 - [Hackintool](https://github.com/headkaze/Hackintool) 
 - [OCAuxiliaryTools](https://github.com/ic005k/OCAuxiliaryTools) AKA `OCAT`.
